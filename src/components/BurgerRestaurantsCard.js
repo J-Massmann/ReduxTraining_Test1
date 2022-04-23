@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import LikeButton from './LikeButton';
 
 export default function BurgerRestaurantsCard({ burgerRestaurantDetail }) {
   return (
     <>
       <SingelBurgerRestaurantWrapper>
         <h2>{burgerRestaurantDetail.name}</h2>
+        <LikeButton burgerRestaurantsId={burgerRestaurantDetail.id} />
       </SingelBurgerRestaurantWrapper>
     </>
   );
