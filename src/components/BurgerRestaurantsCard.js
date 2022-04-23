@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import { Icon } from '@iconify/react';
 import BurgerRestaurantMenu from './BurgerRestaurantMenu';
 import BurgerRestaurantsRatingStars from './BurgerRestaurantsRatingStars';
 import LikeButton from './LikeButton';
+import LocationModal from './LocationModal';
 
 export default function BurgerRestaurantsCard({ burgerRestaurantDetail }) {
   console.log(burgerRestaurantDetail);
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <SingelBurgerRestaurantWrapper>
@@ -17,7 +21,18 @@ export default function BurgerRestaurantsCard({ burgerRestaurantDetail }) {
           <BurgerRestaurantMenu
             burgerRestaurantDetails={burgerRestaurantDetail.brewery_type}
           />
+          <LocationButton
+            aria-label="click to see the address of the burger restaurant"
+            onClick={() => setShowModal(true)}
+          >
+            <LocationIcon icon="akar-icons:location" />
+          </LocationButton>
         </SectionWrapper>
+        <LocationModal
+          showModal={showModal}
+          handleCloseModal={() => setShowModal(false)}
+          locationDetails={burgerRestaurantDetail}
+        />
       </SingelBurgerRestaurantWrapper>
     </>
   );
@@ -36,4 +51,14 @@ const SectionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const LocationButton = styled.button`
+  background: none;
+  border: none;
+`;
+
+const LocationIcon = styled(Icon)`
+  height: 30px;
+  width: 30px;
 `;
