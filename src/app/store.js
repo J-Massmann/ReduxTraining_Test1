@@ -3,7 +3,7 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { burgerRestaurantsApi } from '../services/burgerRestaurants.js';
 import loadMoreBurgerRestaurantsReducer from '../features/loadMoreBurgerRestaurantsSlice.js';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     [burgerRestaurantsApi.reducerPath]: burgerRestaurantsApi.reducer,
     numberOfBurgerRestaurantsLoaded: loadMoreBurgerRestaurantsReducer,
@@ -13,3 +13,5 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
+
+export default store;

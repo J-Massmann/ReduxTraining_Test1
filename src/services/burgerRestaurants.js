@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const burgerRestaurantsApi = createApi({
   reducerPath: 'burgerRestaurant',
@@ -13,4 +13,5 @@ export const burgerRestaurantsApi = createApi({
   }),
 });
 
-export const { useGetBurgerRestaurantsQuery } = burgerRestaurantsApi;
+export const { useGetBurgerRestaurantsByNumberOfRestaurantsQuery } =
+  burgerRestaurantsApi;
