@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import BurgerRestaurantMenu from './BurgerRestaurantMenu';
 import BurgerRestaurantsRatingStars from './BurgerRestaurantsRatingStars';
 import LikeButton from './LikeButton';
 
 export default function BurgerRestaurantsCard({ burgerRestaurantDetail }) {
+  console.log(burgerRestaurantDetail);
   return (
     <>
       <SingelBurgerRestaurantWrapper>
@@ -11,6 +13,11 @@ export default function BurgerRestaurantsCard({ burgerRestaurantDetail }) {
           <LikeButton burgerRestaurantsId={burgerRestaurantDetail.id} />
         </SectionWrapper>
         <BurgerRestaurantsRatingStars restaurantRating={3.5} />
+        <SectionWrapper>
+          <BurgerRestaurantMenu
+            burgerRestaurantDetails={burgerRestaurantDetail.brewery_type}
+          />
+        </SectionWrapper>
       </SingelBurgerRestaurantWrapper>
     </>
   );
