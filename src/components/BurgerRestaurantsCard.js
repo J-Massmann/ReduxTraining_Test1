@@ -7,7 +7,6 @@ import LikeButton from './LikeButton';
 import LocationModal from './LocationModal';
 
 export default function BurgerRestaurantsCard({ burgerRestaurantDetail }) {
-  console.log(burgerRestaurantDetail);
   const [showModal, setShowModal] = useState(false);
   return (
     <>
