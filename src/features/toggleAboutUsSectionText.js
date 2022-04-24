@@ -2,10 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const toggleAboutUsSectionTextSlice = createSlice({
   name: 'aboutUsSectionText',
-  initialState: { isTextHidden: true },
+  initialState: { isTextHidden: {} },
   reducers: {
-    toggleHidden(state) {
-      state.isTextHidden = !state.isTextHidden;
+    toggleHidden(state, action) {
+      const id = action.payload;
+      state.isTextHidden[id] = !state.isTextHidden[id];
     },
   },
 });

@@ -6,7 +6,7 @@ export default function About() {
     <main>
       <h1>About us</h1>
       {AboutTexts.map(aboutText => (
-        <AboutUsSection key={aboutText.name} SectionDetails={aboutText} />
+        <AboutUsSection key={aboutText.id} SectionDetails={aboutText} />
       ))}
     </main>
   );
