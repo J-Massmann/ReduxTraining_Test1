@@ -7,6 +7,9 @@ export default function Navigation() {
       <button>
         <Link to={'/'}>Home</Link>
       </button>
+      <button>
+        <Link to={'/imageslideshow'}>Image Slideshow</Link>
+      </button>
     </NavigationWrapper>
   );
 }
